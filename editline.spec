@@ -2,12 +2,12 @@
 
 %define lib_major	0
 %define lib_name_orig	%mklibname editline
-%define lib_name	%{lib_name_orig}%{lib_major}
+%define lib_name	%mklibname editline
 
 Summary:	Line editing library similar to readline
 Name:		editline
 Version:	%{pversion}
-Release:	%mkrel 5
+Release:	%mkrel 6
 Epoch:		0
 License:	BSD-style
 Group:		System/Libraries
