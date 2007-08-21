@@ -1,8 +1,8 @@
 %define pversion 1.12
 
 %define lib_major	0
-%define lib_name_orig	%mklibname editline
-%define lib_name	%mklibname editline
+%define lib_name_devel	%mklibname -d editline
+%define lib_name	%mklibname editline %lib_major
 
 Summary:	Line editing library similar to readline
 Name:		editline
@@ -29,14 +29,14 @@ Provides: %{name} = %{epoch}:%{version}-%{release}
 This package contains the library needed to run programs dynamically
 linked to %{name}.
 
-%package -n %{lib_name}-devel
+%package -n %{lib_name_devel}
 Summary: Files for developing programs that use the %{name} library
 Group: Development/C
 Requires: %{lib_name} = %{epoch}:%{version}-%{release}
 Provides: lib%{name}-devel = %{epoch}:%{version}-%{release}
 Provides: %{name}-devel = %{epoch}:%{version}-%{release}
 
-%description -n %{lib_name}-devel
+%description -n %{lib_name_devel}
 Line editing library similar to readline.
 
 %prep
@@ -70,7 +70,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(-,root,root)
 %{_libdir}/lib*.so.*
 
-%files -n %{lib_name}-devel
+%files -n %{lib_name_devel}
 %defattr(-,root,root)
 %doc MANIFEST README
 %{_includedir}/*.h
