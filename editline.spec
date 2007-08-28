@@ -7,7 +7,7 @@
 Summary:	Line editing library similar to readline
 Name:		editline
 Version:	%{pversion}
-Release:	%mkrel 6
+Release:	%mkrel 7
 Epoch:		0
 License:	BSD-style
 Group:		System/Libraries
@@ -35,6 +35,8 @@ Group: Development/C
 Requires: %{lib_name} = %{epoch}:%{version}-%{release}
 Provides: lib%{name}-devel = %{epoch}:%{version}-%{release}
 Provides: %{name}-devel = %{epoch}:%{version}-%{release}
+Provides: %{lib_name}-devel = %{epoch}:%{version}-%{release}
+Obsoletes: %{lib_name}-devel
 
 %description -n %{lib_name_devel}
 Line editing library similar to readline.
@@ -77,5 +79,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_mandir}/man*/*
 %{_libdir}/lib*.a
 %{_libdir}/lib*.so
-
-
