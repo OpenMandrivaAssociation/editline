@@ -15,6 +15,7 @@ Source0:	%{name}-%{version}.tar.bz2
 Patch0:		%{name}-build.patch
 BuildRequires:	libtermcap-devel
 BuildRequires:  libtool
+Buildroot:	%{_tmppath}/%{name}-root
 
 %description
 Line editing library similar to readline.
