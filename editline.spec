@@ -7,7 +7,7 @@
 Summary:	Line editing library similar to readline
 Name:		editline
 Version:	%{pversion}
-Release:	%mkrel 10
+Release:	%mkrel 11
 Epoch:		0
 License:	BSD-style
 Group:		System/Libraries
