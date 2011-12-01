@@ -49,21 +49,21 @@ Line editing library similar to readline.
 %make CC="gcc $RPM_OPT_FLAGS"
 
 %install
-rm -rf $RPM_BUILD_ROOT
-install -d -m 755 $RPM_BUILD_ROOT%{_libdir}
-install -m 644 .libs/lib%{name}.a $RPM_BUILD_ROOT%{_libdir}
-install -m 755 .libs/lib%{name}.so.0.0.0 $RPM_BUILD_ROOT%{_libdir}
-(cd $RPM_BUILD_ROOT%{_libdir}; \
+rm -rf %{buildroot}
+install -d -m 755 %{buildroot}%{_libdir}
+install -m 644 .libs/lib%{name}.a %{buildroot}%{_libdir}
+install -m 755 .libs/lib%{name}.so.0.0.0 %{buildroot}%{_libdir}
+(cd %{buildroot}%{_libdir}; \
 ln -sf lib%{name}.so.0.0.0 lib%{name}.so; \
 ln -sf lib%{name}.so.0.0.0 lib%{name}.so.0)
-install -d -m 755 $RPM_BUILD_ROOT%{_includedir}
-install -m 644 include_editline.h $RPM_BUILD_ROOT%{_includedir}/editline.h
-install -d -m 755 $RPM_BUILD_ROOT%{_mandir}/man3
-install -m 644 %{name}.3 $RPM_BUILD_ROOT%{_mandir}//man3
+install -d -m 755 %{buildroot}%{_includedir}
+install -m 644 include_editline.h %{buildroot}%{_includedir}/editline.h
+install -d -m 755 %{buildroot}%{_mandir}/man3
+install -m 644 %{name}.3 %{buildroot}%{_mandir}//man3
 chmod 644 MANIFEST README
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %if %mdkversion < 200900
 %post -n %{lib_name} -p /sbin/ldconfig
