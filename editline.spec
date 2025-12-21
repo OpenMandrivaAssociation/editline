@@ -13,6 +13,7 @@ License:	BSD-style
 Group:		System/Libraries
 Source0:	%{name}-%{version}.tar.bz2
 Patch0:		%{name}-build.patch
+BuildRequires:	make
 BuildRequires:	libtermcap-devel
 BuildRequires:  libtool
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
